@@ -121,7 +121,7 @@ public class TelaLogin extends javax.swing.JFrame {
     JOptionPane.showMessageDialog(this, Nome+ "\n" +Serial[0]+Serial[1]+Serial[2]+Serial[3]+Serial[4]+Serial[5]+Serial[6]+Serial[7]+Serial[8]+Serial[9]+Serial[10]+Serial[11]);
     }
     catch(Exception e){
-    JOptionPane.showMessageDialog(this, "Informações erradas");}
+    jLabel1.setText("Informações erradas");}
     }//GEN-LAST:event_btnCadastroActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -130,7 +130,10 @@ public class TelaLogin extends javax.swing.JFrame {
         
         for(Usuarios a:lista){
         if(a.Email.equals(email) && a.Senha.equals(senha)){
-            JOptionPane.showMessageDialog(this, "Teste");
+            if(a.Permissao == true){
+                JOptionPane.showMessageDialog(this, "Admin");
+            }
+            else{JOptionPane.showMessageDialog(this, "User");}
         }
         campoEmail.setText("");
         campoSenha.setText("");
