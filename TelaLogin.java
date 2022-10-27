@@ -129,8 +129,10 @@ public class TelaLogin extends javax.swing.JFrame {
         if(a.Email.equals(email) && a.Senha.equals(senha)){
             if(a.Permissao){
                 new TelaAdmin().setVisible(true);
+                dispose();
             }
-            else{JOptionPane.showMessageDialog(this, "User");}
+            else{JOptionPane.showMessageDialog(this, "User");
+            dispose();}
         }
         campoEmail.setText("");
         campoSenha.setText("");

@@ -5,7 +5,9 @@
  */
 package trabalhoacademia;
 
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
@@ -37,11 +39,12 @@ public class TelaAdmin extends javax.swing.JFrame {
         btnEditar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         btnListar = new javax.swing.JButton();
+        bntVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("Bem vindo, Admin:");
+        jLabel1.setText("Bem vindo, Admin");
 
         btnCadastroAdmin.setText("Criar Admin");
         btnCadastroAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -51,10 +54,32 @@ public class TelaAdmin extends javax.swing.JFrame {
         });
 
         btnEditar.setText("Editar Usuários");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         btnExcluir.setText("Excluir Usuários");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
 
         btnListar.setText("Listar Usuários");
+        btnListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarActionPerformed(evt);
+            }
+        });
+
+        bntVoltar.setText("Voltar a tela de login");
+        bntVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntVoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -70,7 +95,8 @@ public class TelaAdmin extends javax.swing.JFrame {
                             .addComponent(btnCadastroAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
                             .addComponent(btnListar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(bntVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -86,7 +112,9 @@ public class TelaAdmin extends javax.swing.JFrame {
                 .addComponent(btnExcluir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnListar)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(bntVoltar)
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -118,6 +146,57 @@ public class TelaAdmin extends javax.swing.JFrame {
         lista.add(p);
         JOptionPane.showMessageDialog(this, Nome+ "\n" +Serial[0]+Serial[1]+Serial[2]+Serial[3]+Serial[4]+Serial[5]+Serial[6]+Serial[7]+Serial[8]+Serial[9]+Serial[10]+Serial[11]);
     }//GEN-LAST:event_btnCadastroAdminActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        String z = JOptionPane.showInputDialog("Insira o email do usuario que queira editar");
+        for(Usuarios a : lista){            
+            if(z.equals(a.getEmail())){
+                String btn[] = {"Nome","Email","Idade","Senha","Sexo","Cancelar"};
+                int i = JOptionPane.showOptionDialog(this, "Qual deles você quer editar?", "Editar", JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, btn, "Cancelar");
+                if(i <5){
+                    String r = JOptionPane.showInputDialog("Insira o novo termo");
+                    switch (i){
+                        case 0:
+                        a.setNome(r);
+                        break;
+                        case 1:
+                        a.setEmail(r);
+                        break;
+                        case 2:
+                        int b = Integer.parseInt(r);
+                        a.setIdade(b);
+                        break;
+                        case 3:
+                        a.setSenha(r);
+                        break;
+                        case 4:
+                        a.setSexo(r);
+                        break;
+                        default:
+                        this.dispose();
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        String z = JOptionPane.showInputDialog("Insira o email do usuario que deseja apagar");
+        for(Usuarios a : lista){            
+            if(z.equals(a.getEmail())){
+                lista.remove(a);
+            }
+        }
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnListarActionPerformed
+
+    private void bntVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntVoltarActionPerformed
+        new TelaLogin().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_bntVoltarActionPerformed
 
     public void criarSerial(Usuarios a){
         String[] letras = {"A","B","C","D","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9","10"};
@@ -169,11 +248,12 @@ public class TelaAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bntVoltar;
     private javax.swing.JButton btnCadastroAdmin;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnListar;
-    private javax.swing.JLabel jLabel1;
+    javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
-}
+    }
