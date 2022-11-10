@@ -131,9 +131,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Jlabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelOpc" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="316" max="32767" attributes="0"/>
-                      <Component id="Jlabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelVolta" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -143,8 +143,8 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Jlabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Jlabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelOpc" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelVolta" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -152,7 +152,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="Jlabel1">
+            <Component class="javax.swing.JLabel" name="labelOpc">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -160,10 +160,10 @@
                 <Property name="text" type="java.lang.String" value="Op&#xe7;&#xf5;es"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Jlabel1MouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="labelOpcMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="Jlabel2">
+            <Component class="javax.swing.JLabel" name="labelVolta">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -171,7 +171,7 @@
                 <Property name="text" type="java.lang.String" value="Voltar"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Jlabel2MouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="labelVoltaMouseClicked"/>
               </Events>
             </Component>
           </SubComponents>

@@ -17,9 +17,9 @@ import javax.swing.JOptionPane;
  */
 public class TelaAdmin extends javax.swing.JFrame {
     
-    static ArrayList<Usuarios> lista;
+    static ArrayList<Usuario> lista;
     String[] serial;
-    static Usuarios u;
+    static Usuario u;
     public TelaAdmin() {
         initComponents();
     }
@@ -139,17 +139,17 @@ public class TelaAdmin extends javax.swing.JFrame {
         String Imagem = null;
         String Senha = JOptionPane.showInputDialog(this, "Insira sua senha");
         Boolean Permissao = true;
-        Usuarios p = new Usuarios(Nome, Email, Idade, Sexo, Imagem, Senha, Permissao);
+        Usuario p = new Usuario(Nome, Email, Idade, Sexo, Imagem, Senha, Permissao);
         criarSerial(p);
         String[] Serial = serial;
-        
         lista.add(p);
+        //Display.atua
         JOptionPane.showMessageDialog(this, Nome+ "\n" +Serial[0]+Serial[1]+Serial[2]+Serial[3]+Serial[4]+Serial[5]+Serial[6]+Serial[7]+Serial[8]+Serial[9]+Serial[10]+Serial[11]);
     }//GEN-LAST:event_btnCadastroAdminActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         String z = JOptionPane.showInputDialog("Insira o email do usuario que queira editar");
-        for(Usuarios u : lista){            
+        for(Usuario u : lista){            
             if(z.equals(u.getEmail())){
                 String btn[] = {"Nome","Email","Idade","Senha","Sexo","Cancelar"};
                 int i = JOptionPane.showOptionDialog(this, "Qual deles você quer editar?", "Editar", JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, btn, "Cancelar");
@@ -181,24 +181,25 @@ public class TelaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        String z = JOptionPane.showInputDialog("Insira o email do usuario que deseja apagar");
-        for(Usuarios u : lista){            
-            if(z.equals(u.getEmail())){
+        String z = JOptionPane.showInputDialog("Insira o Serial do usuario que deseja apagar");
+        String[] serialArray = z.split("");
+        for(Usuario u : lista){
+            if(Arrays.equals(serialArray, u.Serial)){
                 lista.remove(u);
             }
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-        // TODO add your handling code here:
+    Display.abrir();
     }//GEN-LAST:event_btnListarActionPerformed
 
     private void bntVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntVoltarActionPerformed
-        new TelaLogin().setVisible(true);
+        TelaLogin.abrir();
         dispose();
     }//GEN-LAST:event_bntVoltarActionPerformed
 
-    public void criarSerial(Usuarios u){
+    public void criarSerial(Usuario u){
         String[] letras = {"A","B","C","D","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9","10"};
         serial = new String[12];
         Random ran = new Random();
@@ -215,7 +216,7 @@ public class TelaAdmin extends javax.swing.JFrame {
             
     }
     
-    public static void main(String args[]) {
+    public static void abrir() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

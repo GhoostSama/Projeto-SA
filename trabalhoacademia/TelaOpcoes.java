@@ -7,7 +7,6 @@ package trabalhoacademia;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import static trabalhoacademia.TelaAdmin.lista;
 
 /**
  *
@@ -15,8 +14,8 @@ import static trabalhoacademia.TelaAdmin.lista;
  */
 public class TelaOpcoes extends javax.swing.JFrame {
 
-    static ArrayList<Usuarios> lista;
-    static Usuarios a;
+    static ArrayList<Usuario> lista;
+    static Usuario a;
     public TelaOpcoes() {
         initComponents();
     }
@@ -30,100 +29,130 @@ public class TelaOpcoes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        labelEdtNome = new javax.swing.JLabel();
+        labelEdtEmail = new javax.swing.JLabel();
+        labelEdtSenha = new javax.swing.JLabel();
+        labelEdtSex = new javax.swing.JLabel();
+        btnVoltar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setIconImages(null);
+        setResizable(false);
 
-        jLabel1.setText("Editar Nome");
-        jLabel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                jLabel1MouseDragged(evt);
-            }
-        });
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelEdtNome.setText("Editar Nome");
+        labelEdtNome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                labelEdtNomeMouseClicked(evt);
             }
         });
 
-        jLabel2.setText("Editar Email");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelEdtEmail.setText("Editar Email");
+        labelEdtEmail.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                labelEdtEmailMouseClicked(evt);
             }
         });
 
-        jLabel3.setText("Editar Senha");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelEdtSenha.setText("Editar Senha");
+        labelEdtSenha.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                labelEdtSenhaMouseClicked(evt);
             }
         });
 
-        jLabel4.setText("Editar Sexo");
+        labelEdtSex.setText("Editar Sexo");
+        labelEdtSex.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelEdtSexMouseClicked(evt);
+            }
+        });
+
+        btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addContainerGap(71, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelEdtNome)
+                            .addComponent(labelEdtEmail)
+                            .addComponent(labelEdtSenha)
+                            .addComponent(labelEdtSex)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(btnVoltar)))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(labelEdtNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(labelEdtEmail)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
+                .addComponent(labelEdtSenha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addComponent(labelEdtSex)
+                .addGap(50, 50, 50)
+                .addComponent(btnVoltar)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseDragged
-        
-    }//GEN-LAST:event_jLabel1MouseDragged
+    private void labelEdtNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelEdtNomeMouseClicked
+    int pos = posicao();
+    String b = JOptionPane.showInputDialog("Insira seu novo nome");
+    a.setNome(b);
+    lista.set(pos,a);
+    }//GEN-LAST:event_labelEdtNomeMouseClicked
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-            String b = JOptionPane.showInputDialog("Insira seu novo nome");
-            a.setNome(b);
-            JOptionPane.showMessageDialog(this, a.getNome());
-    }//GEN-LAST:event_jLabel1MouseClicked
+    private void labelEdtEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelEdtEmailMouseClicked
+    int pos = posicao();
+    String b = JOptionPane.showInputDialog("Insira seu novo Email");
+    a.setEmail(b);
+    lista.set(pos, a);
+    }//GEN-LAST:event_labelEdtEmailMouseClicked
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-            String b = JOptionPane.showInputDialog("Insira seu novo Email");
-            a.setEmail(b);
-            JOptionPane.showMessageDialog(this, a.getEmail());
-    }//GEN-LAST:event_jLabel2MouseClicked
-
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-            String b = JOptionPane.showInputDialog("Insira sua senha atual");
-            if (b.equals(a.getSenha())){
+    private void labelEdtSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelEdtSenhaMouseClicked
+    int pos = posicao();
+    String b = JOptionPane.showInputDialog("Insira sua senha atual");
+        if (b.equals(a.getSenha())){
             String f = JOptionPane.showInputDialog("Insira sua nova senha");
-            a.setNome(f);
-            JOptionPane.showMessageDialog(this, a.getNome());
-            }
-    }//GEN-LAST:event_jLabel3MouseClicked
+            a.setSenha(f);
+            lista.set(pos, a);
+        }
+    }//GEN-LAST:event_labelEdtSenhaMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        TelaUsuario.lista = lista;
+        dispose();
+    }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void labelEdtSexMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelEdtSexMouseClicked
+        int pos = posicao();
+        String b = JOptionPane.showInputDialog("Insira o sexo desejado");
+        a.setSexo(b);
+        lista.set(pos, a);
+        
+    }//GEN-LAST:event_labelEdtSexMouseClicked
+
+    public int posicao(){
+        return lista.indexOf(a);
+    }
+    
+    public static void abrir() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -156,9 +185,10 @@ public class TelaOpcoes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton btnVoltar;
+    private javax.swing.JLabel labelEdtEmail;
+    private javax.swing.JLabel labelEdtNome;
+    private javax.swing.JLabel labelEdtSenha;
+    private javax.swing.JLabel labelEdtSex;
     // End of variables declaration//GEN-END:variables
 }
