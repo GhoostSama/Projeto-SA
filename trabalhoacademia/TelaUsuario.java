@@ -14,8 +14,8 @@ import javax.swing.JLabel;
  */
 public class TelaUsuario extends javax.swing.JFrame {
 
-    static ArrayList<Usuarios> lista;
-    static Usuarios u;
+    static ArrayList<Usuario> lista;
+    static Usuario u;
     public TelaUsuario() {
         initComponents();
     }
@@ -39,8 +39,8 @@ public class TelaUsuario extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        Jlabel1 = new javax.swing.JLabel();
-        Jlabel2 = new javax.swing.JLabel();
+        labelOpc = new javax.swing.JLabel();
+        labelVolta = new javax.swing.JLabel();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
@@ -81,19 +81,19 @@ public class TelaUsuario extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
-        Jlabel1.setForeground(new java.awt.Color(255, 255, 255));
-        Jlabel1.setText("Opções");
-        Jlabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelOpc.setForeground(new java.awt.Color(255, 255, 255));
+        labelOpc.setText("Opções");
+        labelOpc.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Jlabel1MouseClicked(evt);
+                labelOpcMouseClicked(evt);
             }
         });
 
-        Jlabel2.setForeground(new java.awt.Color(255, 255, 255));
-        Jlabel2.setText("Voltar");
-        Jlabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelVolta.setForeground(new java.awt.Color(255, 255, 255));
+        labelVolta.setText("Voltar");
+        labelVolta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Jlabel2MouseClicked(evt);
+                labelVoltaMouseClicked(evt);
             }
         });
 
@@ -103,9 +103,9 @@ public class TelaUsuario extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Jlabel1)
+                .addComponent(labelOpc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 316, Short.MAX_VALUE)
-                .addComponent(Jlabel2)
+                .addComponent(labelVolta)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -113,8 +113,8 @@ public class TelaUsuario extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Jlabel1)
-                    .addComponent(Jlabel2))
+                    .addComponent(labelOpc)
+                    .addComponent(labelVolta))
                 .addContainerGap())
         );
 
@@ -145,19 +145,21 @@ public class TelaUsuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Jlabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Jlabel1MouseClicked
-        new TelaOpcoes().setVisible(true);
+    private void labelOpcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelOpcMouseClicked
+        TelaOpcoes.abrir();
         TelaOpcoes.a = u;
-    }//GEN-LAST:event_Jlabel1MouseClicked
+        TelaOpcoes.lista = lista;
+    }//GEN-LAST:event_labelOpcMouseClicked
 
-    private void Jlabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Jlabel2MouseClicked
-        new TelaLogin().setVisible(true);
-    }//GEN-LAST:event_Jlabel2MouseClicked
+    private void labelVoltaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelVoltaMouseClicked
+        TelaLogin.abrir();
+        TelaLogin.lista = lista;
+    }//GEN-LAST:event_labelVoltaMouseClicked
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void abrir() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -184,15 +186,12 @@ public class TelaUsuario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                TelaUsuario tu = new TelaUsuario();
-                tu.setVisible(true);
+                new TelaUsuario().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Jlabel1;
-    private javax.swing.JLabel Jlabel2;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDialog jDialog1;
@@ -203,5 +202,7 @@ public class TelaUsuario extends javax.swing.JFrame {
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem3;
+    private javax.swing.JLabel labelOpc;
+    private javax.swing.JLabel labelVolta;
     // End of variables declaration//GEN-END:variables
 }

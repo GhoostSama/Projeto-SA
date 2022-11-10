@@ -16,9 +16,9 @@ import javax.swing.JOptionPane;
  */
 public class TelaLogin extends javax.swing.JFrame {
 
-    ArrayList<Usuarios> lista = new ArrayList<>();
-    String[] serial;
-    Usuarios a;
+    static ArrayList<Usuario> lista = new ArrayList<>();
+    static String[] serial;
+    Usuario a;
     public TelaLogin() {
         initComponents();
     }
@@ -32,7 +32,7 @@ public class TelaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        btnLogin = new javax.swing.JButton();
         btnCadastro = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         campoSenha = new javax.swing.JPasswordField();
@@ -42,10 +42,10 @@ public class TelaLogin extends javax.swing.JFrame {
         setFocusable(false);
         setResizable(false);
 
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnLoginActionPerformed(evt);
             }
         });
 
@@ -78,7 +78,7 @@ public class TelaLogin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(158, 158, 158)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1)
+                    .addComponent(btnLogin)
                     .addComponent(btnCadastro)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                     .addComponent(campoSenha)
@@ -95,7 +95,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btnLogin)
                 .addGap(1, 1, 1)
                 .addComponent(btnCadastro)
                 .addContainerGap(139, Short.MAX_VALUE))
@@ -112,20 +112,21 @@ public class TelaLogin extends javax.swing.JFrame {
     jLabel1.setText("Informações erradas");}
     }//GEN-LAST:event_btnCadastroActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         String email = campoEmail.getText();
         String senha = campoSenha.getText();
         TelaAdmin.lista = lista;
         TelaUsuario.lista = lista;
-        for(Usuarios a:lista){
+        Display.lista = lista;
+        for(Usuario a:lista){
         if(a.Email.equals(email) && a.Senha.equals(senha)){
             if(a.Permissao){
-                new TelaAdmin().setVisible(true);
+                TelaAdmin.abrir();
                 dispose();
                 TelaAdmin.u = a;
             }
             else{
-                new TelaUsuario().setVisible(true);
+                TelaUsuario.abrir();
                 dispose();
                 TelaUsuario.u = a;
             }
@@ -133,7 +134,7 @@ public class TelaLogin extends javax.swing.JFrame {
         campoEmail.setText("");
         campoSenha.setText("");
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     private void campoSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_campoSenhaMouseClicked
         campoSenha.setText("");
@@ -151,7 +152,7 @@ public class TelaLogin extends javax.swing.JFrame {
     String Imagem = null;
     String Senha = JOptionPane.showInputDialog(this, "Insira sua senha");
     Boolean Permissao = false;
-    Usuarios p = new Usuarios(Nome, Email, Idade, Sexo, Imagem, Senha, Permissao);
+    Usuario p = new Usuario(Nome, Email, Idade, Sexo, Imagem, Senha, Permissao);
     lista.add(p);
     criarSerial(p);
     String Serial[] = serial;
@@ -166,11 +167,12 @@ public class TelaLogin extends javax.swing.JFrame {
     String Imagem = null;
     String Senha = "Admin";
     Boolean Permissao = true;
-    Usuarios first = new Usuarios(Nome, Email, Idade, Sexo, Imagem, Senha, Permissao);
+    Usuario first = new Usuario(Nome, Email, Idade, Sexo, Imagem, Senha, Permissao);
+    first.setSerial(Serial);
     lista.add(first);
     }
     
-    public void criarSerial(Usuarios a){
+    public void criarSerial(Usuario a){
         String[] letras = {"A","B","C","D","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9","10"};
         serial = new String[12];
         Random ran = new Random();
@@ -196,12 +198,20 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
     }
+    public static void abrir() {
+            
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new TelaLogin().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastro;
+    private javax.swing.JButton btnLogin;
     private javax.swing.JTextField campoEmail;
     private javax.swing.JPasswordField campoSenha;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
