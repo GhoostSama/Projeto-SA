@@ -15,13 +15,13 @@ Repositório com todos os códigos relacionados ao trabalho final de Lógica de 
 
 Dois tipos de usuários: usuário comum e administrador  
 Sistema CRUD (Create, Read, Update, Delete) para os administradores  
-Calendário funcional e editável  
+Calendário funcional e editável (Para o futuro.)
 ID's aleátorios para Admins e Usuários  
 Sistema funcionando com servidor (para o futuro)
 
 ### Não funcionais
 
 Linguagem de Programação: JAVA  
-Programa em Desktop  
-Layout com sistema completo para usuários, contendo: dieta, calendário, rotina de treinamento, contato com o treinador e suporte  
+Programa em Desktop
+Layout com sistema completo para usuários, contendo: dieta, calendário, rotina de treinamento, contato com o treinador e suporte. (Para o futuro)
 Layout de admin com: sistema CRUD (Create, Read, Update, Delete)
