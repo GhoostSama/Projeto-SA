@@ -13,15 +13,27 @@ Repositório com todos os códigos relacionados ao trabalho final de Lógica de 
 
 ### Funcionais
 
-Dois tipos de usuários: usuário comum e administrador  
-Sistema CRUD (Create, Read, Update, Delete) para os administradores  
+Dois tipos de usuários: usuário comum e administrador
+  
+Sistema CRUD (Create, Read, Update, Delete) para os administradores
+
+* Administradores podem criar, apagar, ler e atualizar todos os usuários cadastrados no nosso sistema. Não só isso, mas um administrador pode criar muitos outros administradores
+
 Calendário funcional e editável (Para o futuro.)
-ID's aleátorios para Admins e Usuários  
+
+ID's aleátorios para Admins e Usuários
+
+* Todos os ID'S são feitos aleatoriamente, o primeiro caractere é o que decide se o usuário é comum ou um admin.
+Utilizamos de uma ArrayList aleatória, e quando ele percebe se o login tem permissão de adm, ele então vai criar o primeiro caractere dentro de um limite de outros caracteres
+
 Sistema funcionando com servidor (para o futuro)
 
 ### Não funcionais
 
-Linguagem de Programação: JAVA  
+Linguagem de Programação: JAVA
+
 Programa em Desktop
+
 Layout com sistema completo para usuários, contendo: dieta, calendário, rotina de treinamento, contato com o treinador e suporte. (Para o futuro)
+
 Layout de admin com: sistema CRUD (Create, Read, Update, Delete)
