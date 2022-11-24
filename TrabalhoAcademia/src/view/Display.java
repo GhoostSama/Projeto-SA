@@ -208,7 +208,7 @@ public class Display extends javax.swing.JFrame {
                         + "<br/> Email: " + lista.get(user).getEmail()
                         + "<br/>Serial: " + serial
                         + "<br/>Idade: " + lista.get(user).getIdade()
-                        + "<br/>Sexo: " + lista.get(user).getNome());
+                        + "<br/>Sexo: " + lista.get(user).getSexo());
             }
         }
         numPagina.setText(page + "");

@@ -33,25 +33,46 @@ public class TelaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         btnLogin = new javax.swing.JButton();
         btnCadastro = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         campoSenha = new javax.swing.JPasswordField();
         campoEmail = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setFocusable(false);
+        setTitle("Tela de login");
+        setAutoRequestFocus(false);
+        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setFocusCycleRoot(false);
+        setIconImages(null);
+        setMaximumSize(new java.awt.Dimension(720, 512));
+        setMinimumSize(new java.awt.Dimension(720, 512));
+        setPreferredSize(new java.awt.Dimension(720, 512));
         setResizable(false);
+        setSize(new java.awt.Dimension(720, 512));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setMaximumSize(new java.awt.Dimension(720, 512));
+        jPanel1.setMinimumSize(new java.awt.Dimension(720, 512));
+        jPanel1.setOpaque(false);
+
+        btnLogin.setBackground(new java.awt.Color(217, 217, 217));
         btnLogin.setText("Login");
+        btnLogin.setToolTipText("");
+        btnLogin.setBorder(null);
+        btnLogin.setBorderPainted(false);
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
 
-        btnCadastro.setBackground(new java.awt.Color(255, 255, 255));
+        btnCadastro.setBackground(new java.awt.Color(217, 217, 217));
         btnCadastro.setText("Cadastrar");
+        btnCadastro.setBorder(null);
         btnCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastroActionPerformed(evt);
@@ -59,6 +80,7 @@ public class TelaLogin extends javax.swing.JFrame {
         });
 
         campoSenha.setText("Senha");
+        campoSenha.setBorder(null);
         campoSenha.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 campoSenhaMouseClicked(evt);
@@ -66,41 +88,73 @@ public class TelaLogin extends javax.swing.JFrame {
         });
 
         campoEmail.setText("Email");
+        campoEmail.setBorder(null);
         campoEmail.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 campoEmailMouseClicked(evt);
             }
         });
+        campoEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoEmailActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(158, 158, 158)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnLogin)
-                    .addComponent(btnCadastro)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addComponent(campoSenha)
-                    .addComponent(campoEmail))
-                .addContainerGap(142, Short.MAX_VALUE))
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/TelaLogin.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 720, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(260, 260, 260)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(290, 290, 290)
+                            .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(300, 300, 300)
+                            .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(300, 300, 300)
+                            .addComponent(campoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(290, 290, 290)
+                            .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(campoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnLogin)
-                .addGap(1, 1, 1)
-                .addComponent(btnCadastro)
-                .addContainerGap(139, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 512, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(230, 230, 230)
+                            .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(186, 186, 186)
+                            .addComponent(campoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(260, 260, 260)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(5, 5, 5)
+                            .addComponent(btnLogin)
+                            .addGap(15, 15, 15)
+                            .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -112,7 +166,8 @@ public class TelaLogin extends javax.swing.JFrame {
     catch(Exception e){
     jLabel1.setText("Informações erradas");}
     }//GEN-LAST:event_btnCadastroActionPerformed
-
+    
+    
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         String email = campoEmail.getText();
         String senha = campoSenha.getText();
@@ -144,6 +199,10 @@ public class TelaLogin extends javax.swing.JFrame {
     private void campoEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_campoEmailMouseClicked
         campoEmail.setText("");
     }//GEN-LAST:event_campoEmailMouseClicked
+
+    private void campoEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoEmailActionPerformed
 
     public void cadastro(){
     String Nome = JOptionPane.showInputDialog(this,"Insira seu nome");
@@ -214,5 +273,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JTextField campoEmail;
     private javax.swing.JPasswordField campoSenha;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

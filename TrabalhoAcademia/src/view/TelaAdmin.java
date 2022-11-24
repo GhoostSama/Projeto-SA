@@ -147,6 +147,7 @@ public class TelaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastroAdminActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        try{
         String z = JOptionPane.showInputDialog("Insira o email do usuario que queira editar");
         for(Usuario u : lista){            
             if(z.equals(u.getEmail())){
@@ -173,10 +174,12 @@ public class TelaAdmin extends javax.swing.JFrame {
                         break;
                         default:
                         this.dispose();
+                        }
                     }
                 }
             }
         }
+        catch(Exception e){ JOptionPane.showMessageDialog(this, "Informações não inseridas.");}
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
@@ -190,7 +193,7 @@ public class TelaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-    Display.abrir();
+        Display.abrir();
     }//GEN-LAST:event_btnListarActionPerformed
 
     private void bntVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntVoltarActionPerformed
@@ -204,9 +207,9 @@ public class TelaAdmin extends javax.swing.JFrame {
         Random ran = new Random();
 
             if(u.Permissao){
-            serial[0] = letras[ran.nextInt(17)];            
+            serial[0] = letras[ran.nextInt(1)];            
             }
-            else{serial[0] = letras[ran.nextInt(17)+18];}
+            else{serial[0] = letras[ran.nextInt(34)+1];}
 
             for(int i = 1; i < 12; i++){
                 serial[i] = letras[ran.nextInt(35)];
