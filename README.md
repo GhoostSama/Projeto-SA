@@ -15,11 +15,7 @@ Repositório com todos os códigos relacionados ao trabalho final de Lógica de 
 
 Para cadastro os valores necessários serão: 
 
-Nome
-Senha
-Email
-Idade
-Sexo
+Nome, Senha, Email, Idade, Sexo
 
 Para a Edição/Exclusão, serão utilizados os emails como parametro de comparação
 
