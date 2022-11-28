@@ -35,10 +35,12 @@ public class TelaOpcoes extends javax.swing.JFrame {
         labelEdtSenha = new javax.swing.JLabel();
         labelEdtSex = new javax.swing.JLabel();
         btnVoltar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setIconImages(null);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelEdtNome.setText("Editar Nome");
         labelEdtNome.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -46,6 +48,7 @@ public class TelaOpcoes extends javax.swing.JFrame {
                 labelEdtNomeMouseClicked(evt);
             }
         });
+        getContentPane().add(labelEdtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 204, 130, 20));
 
         labelEdtEmail.setText("Editar Email");
         labelEdtEmail.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -53,6 +56,7 @@ public class TelaOpcoes extends javax.swing.JFrame {
                 labelEdtEmailMouseClicked(evt);
             }
         });
+        getContentPane().add(labelEdtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 130, -1));
 
         labelEdtSenha.setText("Editar Senha");
         labelEdtSenha.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -60,6 +64,7 @@ public class TelaOpcoes extends javax.swing.JFrame {
                 labelEdtSenhaMouseClicked(evt);
             }
         });
+        getContentPane().add(labelEdtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 130, 20));
 
         labelEdtSex.setText("Editar Sexo");
         labelEdtSex.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -67,47 +72,20 @@ public class TelaOpcoes extends javax.swing.JFrame {
                 labelEdtSexMouseClicked(evt);
             }
         });
+        getContentPane().add(labelEdtSex, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 130, -1));
 
+        btnVoltar.setBackground(new java.awt.Color(0, 180, 255));
         btnVoltar.setText("Voltar");
+        btnVoltar.setBorder(null);
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVoltarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 130, 20));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelEdtNome)
-                            .addComponent(labelEdtEmail)
-                            .addComponent(labelEdtSenha)
-                            .addComponent(labelEdtSex)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(btnVoltar)))
-                .addContainerGap(43, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(labelEdtNome)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelEdtEmail)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelEdtSenha)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelEdtSex)
-                .addGap(50, 50, 50)
-                .addComponent(btnVoltar)
-                .addContainerGap(49, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Tela User 2.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 833, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -187,6 +165,7 @@ public class TelaOpcoes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVoltar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labelEdtEmail;
     private javax.swing.JLabel labelEdtNome;
     private javax.swing.JLabel labelEdtSenha;
