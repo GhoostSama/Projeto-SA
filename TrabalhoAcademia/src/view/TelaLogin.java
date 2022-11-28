@@ -19,6 +19,10 @@ public class TelaLogin extends javax.swing.JFrame {
 
     static ArrayList<Usuario> lista = new ArrayList<>();
     static String[] serial;
+
+    static void criarSerial(Usuario p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     Usuario a;
     public TelaLogin() {
         initComponents();
@@ -160,11 +164,8 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
-    try{
-    cadastro();
-    }
-    catch(Exception e){
-    jLabel1.setText("Informações erradas");}
+    TelaCadastro.abrir();
+    TelaCadastro.lista = lista;
     }//GEN-LAST:event_btnCadastroActionPerformed
     
     
@@ -204,19 +205,6 @@ public class TelaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoEmailActionPerformed
 
-    public void cadastro(){
-    String Nome = JOptionPane.showInputDialog(this,"Insira seu nome");
-    String Email = JOptionPane.showInputDialog(this, "Insira seu Email");
-    int Idade = Integer.parseInt(JOptionPane.showInputDialog(this, "insira sua idade"));
-    String Sexo = JOptionPane.showInputDialog(this, "Insira seu sexo");
-    String Imagem = null;
-    String Senha = JOptionPane.showInputDialog(this, "Insira sua senha");
-    Boolean Permissao = false;
-    Usuario p = new Usuario(Nome, Email, Idade, Sexo, Imagem, Senha, Permissao);
-    lista.add(p);
-    criarSerial(p);
-    String Serial[] = serial;
-    }
     
     public void cadastroAdmin1(){
     String Nome = "Admin";
@@ -232,21 +220,6 @@ public class TelaLogin extends javax.swing.JFrame {
     lista.add(first);
     }
     
-    public void criarSerial(Usuario a){
-        String[] letras = {"A","B","C","D","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"};
-        serial = new String[12];
-        Random ran = new Random();
-
-            if(a.Permissao){
-            serial[0] = letras[ran.nextInt(17)];            
-            }
-            else{serial[0] = letras[ran.nextInt(17)+17];}
-
-            for(int i = 1; i < 12; i++){
-                serial[i] = letras[ran.nextInt(34)];
-            }
-            a.setSerial(serial);       
-    }
     
     public static void main(String args[]) {
             
