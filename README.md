@@ -13,6 +13,16 @@ Repositório com todos os códigos relacionados ao trabalho final de Lógica de 
 
 ### Funcionais
 
+Para cadastro os valores necessários serão: 
+
+Nome
+Senha
+Email
+Idade
+Sexo
+
+Para a Edição/Exclusão, serão utilizados os emails como parametro de comparação
+
 Dois tipos de usuários: usuário comum e administrador
   
 Sistema CRUD (Create, Read, Update, Delete) para os administradores
@@ -39,3 +49,5 @@ Programa em Desktop
 Layout com sistema completo para usuários, contendo: dieta, calendário, rotina de treinamento, contato com o treinador e suporte. (Para o futuro)
 
 Layout de admin com: sistema CRUD (Create, Read, Update, Delete)
+
+ArrayList para a criação de usuários (Chamada de "lista")
