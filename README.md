@@ -30,6 +30,8 @@ Sistema funcionando com servidor (para o futuro)
 
 ### Não funcionais
 
+[Figma](https://www.figma.com/file/8aKzqJxSa8vcIOpnczGriQ/Trabalho-SA?node-id=0%3A1&t=5g1CV6EJuupagJmL-0)
+
 Linguagem de Programação: JAVA
 
 Programa em Desktop
